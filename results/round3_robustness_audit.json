@@ -1,0 +1,18 @@
+{
+  "status": "ROUND3_ROBUSTNESS_V15_GENERATED",
+  "artifact_root": ".",
+  "selected_config_count": 28,
+  "locked_test_event_rows": 46368,
+  "thresholds": [
+    0.35,
+    0.45,
+    0.55,
+    0.65
+  ],
+  "min_ccpb_events": 5288,
+  "max_dominance_rate": 0.004464285714285714,
+  "figure_package": "released artifact result tables",
+  "source_data": "results/round3_robustness_audit.csv",
+  "results_csv": "results/round3_robustness_audit.csv",
+  "markdown": "docs/ROBUSTNESS_AUDIT.md"
+}

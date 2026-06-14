@@ -1,0 +1,13 @@
+This anonymous artifact is shared for peer review.
+
+During double-blind review, the files are provided to enable inspection and
+reproducibility checking without revealing author identities.  The final public
+data and code licences should be set by the authors after acceptance and before
+public archival release.
+
+Recommended final licences, pending author confirmation:
+
+- Data: Creative Commons Attribution 4.0 International (CC BY 4.0), if compatible
+  with the upstream model and generated-output terms.
+- Code: MIT License or Apache License 2.0.
+

@@ -1,0 +1,22 @@
+{
+  "verdict": "VALID",
+  "dataset_dir": "data/",
+  "schema_path": "data/schema.json",
+  "row_counts": {
+    "claim": 576,
+    "network_state": 2208,
+    "raw_agent_response": 2304,
+    "transition_label": 2304,
+    "verifier_outcome": 576,
+    "policy_replay_event": 442368
+  },
+  "parse_success_rate": 1.0,
+  "action_roles_nonzero_false_transition": [
+    "executor",
+    "network_controller",
+    "planner"
+  ],
+  "max_false_transition_rate": 0.9305555555555556,
+  "errors": [],
+  "warnings": []
+}

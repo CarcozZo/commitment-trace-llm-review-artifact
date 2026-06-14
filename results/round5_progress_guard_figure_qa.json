@@ -1,0 +1,69 @@
+{
+  "status": "PROGRESS_GUARD_FIGURE_V17_GENERATED",
+  "artifact_root": "artifact_release\\commitmenttrace_llm_anonymous_v1",
+  "summary": [
+    {
+      "policy_name": "pressure_backpressure",
+      "policy_label": "Pressure BP",
+      "configs": 4,
+      "fce_per_msg": 0.31123769083635267,
+      "progress_per_msg": 0.17673866460446863,
+      "debt": 18.403714883928576,
+      "withheld_pct": 47.43357487922705,
+      "waste_per_msg": 0.00888480578200483,
+      "efficiency_k": 9.603423315300832
+    },
+    {
+      "policy_name": "static_cpb",
+      "policy_label": "Static CPB",
+      "configs": 4,
+      "fce_per_msg": 0.2930827761171498,
+      "progress_per_msg": 0.16307152400362318,
+      "debt": 34.77315198107143,
+      "withheld_pct": 53.80434782608695,
+      "waste_per_msg": 0.009631567028985507,
+      "efficiency_k": 4.689581321025781
+    },
+    {
+      "policy_name": "closed_loop_cpb",
+      "policy_label": "C-CPB",
+      "configs": 4,
+      "fce_per_msg": 0.4332802851373792,
+      "progress_per_msg": 0.21709294402928747,
+      "debt": 21.908040418214288,
+      "withheld_pct": 30.661231884057973,
+      "waste_per_msg": 0.018535054272342994,
+      "efficiency_k": 9.909281701379234
+    },
+    {
+      "policy_name": "progress_guarded_cpb",
+      "policy_label": "PG-C-CPB",
+      "configs": 4,
+      "fce_per_msg": 0.39082689572765705,
+      "progress_per_msg": 0.22280523018568846,
+      "debt": 21.145766409642853,
+      "withheld_pct": 27.204106280193237,
+      "waste_per_msg": 0.012471217240338162,
+      "efficiency_k": 10.536635365653394
+    },
+    {
+      "policy_name": "action_admission",
+      "policy_label": "Action adm.",
+      "configs": 3,
+      "fce_per_msg": 0.4284903538949276,
+      "progress_per_msg": 0.25138613910024155,
+      "debt": 43.70669143523809,
+      "withheld_pct": 21.557971014492754,
+      "waste_per_msg": 0.016822063909017717,
+      "efficiency_k": 5.751662522264587
+    }
+  ],
+  "source_data": {
+    "operating_points": "results/round5_progress_guard_operating_points.csv",
+    "policy_summary": "results/round5_progress_guard_policy_summary.csv",
+    "stress_bins": "results/round5_progress_guard_stress_bins.csv"
+  },
+  "exports": [
+    "paper figure exports generated from released result tables"
+  ]
+}

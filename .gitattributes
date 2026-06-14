@@ -1,0 +1,11 @@
+*.jsonl.gz binary
+*.png binary
+*.pdf binary
+*.zip binary
+*.csv text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.tsv text eol=lf
+

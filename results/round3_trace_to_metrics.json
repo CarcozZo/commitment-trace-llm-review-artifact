@@ -1,0 +1,16 @@
+{
+  "status": "ROUND3_TRACE_TO_METRICS_GENERATED",
+  "artifact_root": ".",
+  "example_count": 5,
+  "event_summary_rows": 80,
+  "trace_rows": 80,
+  "selected_config_count": 28,
+  "policies": [
+    "pressure_backpressure",
+    "static_cpb",
+    "closed_loop_cpb",
+    "progress_guarded_cpb"
+  ],
+  "csv": "results/round3_trace_to_metrics.csv",
+  "markdown": "docs/TRACE_TO_METRICS.md"
+}

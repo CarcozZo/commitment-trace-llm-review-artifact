@@ -1,0 +1,168 @@
+{
+  "schema_version": "commitment_trace_llm_v1",
+  "created_at": "2026-06-11",
+  "purpose": "Machine-readable schema for CommitmentTrace-LLM, used by closed-loop CPB replay.",
+  "records": {
+    "claim": {
+      "required": [
+        "episode_id",
+        "claim_id",
+        "template_id",
+        "claim_type",
+        "message_text",
+        "context_text",
+        "truth_label",
+        "truth_source",
+        "generated_at",
+        "estimated_false_risk",
+        "estimated_utility_if_true",
+        "estimated_fanout",
+        "estimated_irreversibility",
+        "estimated_resource_units",
+        "priority",
+        "deadline_slot"
+      ],
+      "hidden_until_verification": [
+        "truth_label",
+        "truth_source"
+      ]
+    },
+    "network_state": {
+      "required": [
+        "episode_id",
+        "slot",
+        "packet_capacity",
+        "verifier_capacity",
+        "current_commitment_debt",
+        "verifier_queue_length",
+        "resource_utilization",
+        "contact_window_remaining",
+        "link_quality",
+        "burst_indicator"
+      ]
+    },
+    "raw_agent_response": {
+      "required": [
+        "episode_id",
+        "claim_id",
+        "role",
+        "model_id",
+        "prompt_contract_id",
+        "request_json",
+        "raw_response_text",
+        "parsed_json",
+        "parse_status",
+        "created_at",
+        "temperature",
+        "backend"
+      ],
+      "allowed_roles": [
+        "planner",
+        "executor",
+        "verifier",
+        "network_controller"
+      ]
+    },
+    "transition_label": {
+      "required": [
+        "episode_id",
+        "claim_id",
+        "role",
+        "labeler_id",
+        "label_source",
+        "intended_action_state",
+        "commitment_type",
+        "plan_created",
+        "action_prepared",
+        "irreversible_action",
+        "resource_reserved",
+        "verification_queued",
+        "tool_invoked",
+        "propagated",
+        "resource_units",
+        "commitment_pressure",
+        "action_cost",
+        "label_confidence"
+      ],
+      "allowed_action_states": [
+        "NONE",
+        "INFORMATIONAL_ONLY",
+        "TENTATIVE_PLAN",
+        "PREPARED_ACTION",
+        "RESOURCE_RESERVED",
+        "IRREVERSIBLE_ACTION",
+        "VERIFICATION_QUEUED",
+        "PROPAGATED"
+      ],
+      "allowed_commitment_types": [
+        "none",
+        "plan",
+        "action",
+        "resource_reservation",
+        "verification_queue",
+        "propagation"
+      ]
+    },
+    "verifier_outcome": {
+      "required": [
+        "episode_id",
+        "claim_id",
+        "verification_requested_at",
+        "verification_completed_at",
+        "verifier_result",
+        "verification_delay",
+        "evidence_count",
+        "counterevidence_count",
+        "truth_label_after_verification"
+      ]
+    },
+    "policy_replay_event": {
+      "required": [
+        "episode_id",
+        "slot",
+        "policy_name",
+        "policy_config_id",
+        "claim_id",
+        "role",
+        "action",
+        "decision_score",
+        "online_features_json",
+        "hidden_fields_excluded",
+        "delivered",
+        "deferred",
+        "rejected",
+        "downgraded_actionability",
+        "observed_feedback_delay",
+        "fce_increment",
+        "true_progress_increment",
+        "commitment_debt_after",
+        "verifier_queue_after"
+      ],
+      "allowed_actions": [
+        "send_actionable",
+        "send_informational_only",
+        "verify_first",
+        "defer",
+        "reject"
+      ],
+      "hidden_fields_must_be_excluded_before_verification": true
+    }
+  },
+  "splits": {
+    "required": [
+      "train",
+      "validation",
+      "test_id",
+      "test_ood_template",
+      "test_ood_network"
+    ],
+    "no_claim_overlap": true
+  },
+  "quality_gates": {
+    "parse_success_rate_min": 0.95,
+    "min_action_roles_with_nonzero_false_transition": 2,
+    "min_one_action_role_false_transition_rate": 0.2,
+    "label_disagreement_rate_max_before_adjudication": 0.1,
+    "online_truth_leakage_allowed": false
+  }
+}

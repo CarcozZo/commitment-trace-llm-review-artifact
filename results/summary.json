@@ -1,0 +1,56 @@
+{
+  "artifact_version": "anonymous_review_v2_progress_guard",
+  "verdict": "PARETO_REPLAY_CCPB_CANDIDATE",
+  "run_name": "commitment_trace_llm_pareto_v3_progress_guard",
+  "budget_per_policy": 24,
+  "policy_config_count": 192,
+  "policy_event_rows": 442368,
+  "aggregated_rows": 2496,
+  "validation_config_rows": 192,
+  "validation_pareto_rows": 144,
+  "selected_config_count": 28,
+  "test_metric_rows": 196,
+  "dominance_rows": 672,
+  "core_dominance_count": 1,
+  "practical_non_dominated_regimes": [
+    "feasible",
+    "high_fanout_feasible",
+    "network_delay_high",
+    "verifier_scarce"
+  ],
+  "practical_non_dominated_regime_count": 4,
+  "selected_ccpb_configs": [
+    "progress_guarded_cpb_cfg004",
+    "progress_guarded_cpb_cfg005",
+    "progress_guarded_cpb_cfg011",
+    "progress_guarded_cpb_cfg023"
+  ],
+  "release_boundary": "The anonymous review artifact releases locked replay records plus validation, summary, and anonymity-check scripts. Source-trace generation and full Pareto replay drivers are not included in the double-blind package.",
+  "validator_sha256": "7d4853c42a9927a8ab8145df394af8c0386bd2b2924b4de37ec98f441a0ec604",
+  "released_commands": [
+    "python scripts/validate_commitmenttrace.py --root .",
+    "python scripts/summarize_locked_results.py --root .",
+    "python scripts/check_anonymity.py --root ."
+  ],
+  "validation": {
+    "verdict": "VALID",
+    "schema_version": "commitment_trace_llm_v1",
+    "row_counts": {
+      "claim": 576,
+      "network_state": 2208,
+      "raw_agent_response": 2304,
+      "transition_label": 2304,
+      "verifier_outcome": 576,
+      "policy_replay_event": 442368
+    },
+    "parse_success_rate": 1.0,
+    "action_roles_nonzero_false_transition": [
+      "executor",
+      "network_controller",
+      "planner"
+    ],
+    "max_false_transition_rate": 0.9305555555555556,
+    "errors": [],
+    "warnings": []
+  }
+}

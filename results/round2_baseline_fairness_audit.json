@@ -1,0 +1,50 @@
+{
+  "validation_config_counts": {
+    "action_admission": 24,
+    "closed_loop_cpb": 24,
+    "fastest_broadcast": 24,
+    "pressure_backpressure": 24,
+    "progress_guarded_cpb": 24,
+    "semantic_value": 24,
+    "state_aware_aoii": 24,
+    "static_cpb": 24
+  },
+  "selected_config_counts": {
+    "fastest_broadcast": 4,
+    "semantic_value": 3,
+    "state_aware_aoii": 2,
+    "action_admission": 3,
+    "pressure_backpressure": 4,
+    "static_cpb": 4,
+    "closed_loop_cpb": 4,
+    "progress_guarded_cpb": 4
+  },
+  "forbidden_online_feature_rows": 0,
+  "hidden_flag_errors": 0,
+  "online_feature_keys": [
+    "claim_type",
+    "commitment_debt",
+    "contact_window_remaining",
+    "estimated_false_risk",
+    "estimated_fanout",
+    "estimated_irreversibility",
+    "estimated_progress_demand",
+    "estimated_progress_service",
+    "estimated_utility_if_true",
+    "link_quality",
+    "message_age",
+    "packet_capacity",
+    "priority",
+    "progress_deficit",
+    "regime",
+    "resource_utilization",
+    "role",
+    "slot",
+    "slots_to_deadline",
+    "template_id",
+    "verifier_capacity",
+    "verifier_queue_length"
+  ],
+  "dominance_rows": 672,
+  "baseline_core_dominates_ccpb": 1
+}

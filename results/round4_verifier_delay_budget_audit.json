@@ -1,0 +1,10 @@
+{
+  "status": "ROUND4_VERIFIER_DELAY_BUDGET_AUDIT_GENERATED",
+  "artifact_root": ".",
+  "selected_config_count": 28,
+  "locked_test_event_rows": 26496,
+  "figure_package": "released artifact result tables",
+  "source_data": "results/round4_verifier_delay_budget_audit.csv",
+  "results_csv": "results/round4_verifier_delay_budget_audit.csv",
+  "markdown": "docs/VERIFIER_DELAY_BUDGET_AUDIT.md"
+}
