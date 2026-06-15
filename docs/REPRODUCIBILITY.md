@@ -14,8 +14,9 @@ The recommended review sequence is:
 4. inspect `docs/NETWORK_SERVICE_REPLAY_AUDIT.md` for packet capacity, verifier
    capacity, feedback delay, resource utilization, verifier queue, and
    commitment-debt coverage;
-5. inspect the released `results/round7_*` CSV files for the source data used
-   by the manuscript figures.
+5. inspect `docs/CLPD_LOCKED_REPLAY.md`, `results/clpd_*`, and
+   `results/fig*_oldstyle_clpd_*` for the locked CLPD metrics and figure source
+   data used by the manuscript.
 
 All checks are deterministic on the released files and run as CPU-only artifact
 audits with no LLM API calls.
@@ -58,7 +59,10 @@ python scripts\summarize_locked_results.py --root .
 Expected high-level result:
 
 - seven policies are summarized from validation-selected configurations;
-- the locked dominance audit reports `1/672` baseline rows core-dominate selected PG-C-CPB rows.
+- the locked dominance audit reports `1/672` baseline rows core-dominate selected PG-C-CPB rows;
+- the CLPD anchor line reports `clpd_cfg016: FCE/msg 0.330; Prog/msg 0.232; Debt 17.4; Withheld 6.0%`;
+- the CLPD comparison line reports progress/FCE/debt/withheld deltas relative
+  to the selected PG-C-CPB operating region.
 
 ## 4. Audit Network-Service Replay Boundary
 

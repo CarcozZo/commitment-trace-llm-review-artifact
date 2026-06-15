@@ -1,0 +1,52 @@
+{
+  "status": "CLPD_OLDSTYLE_INFOCOM_FIGURES_V1_GENERATED",
+  "run_dir": "work\\commitment_trace_llm\\commitment_trace_llm_pareto_v3_progress_guard",
+  "clpd_dir": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2",
+  "out_dir": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd",
+  "figures": {
+    "fig3_operating_manifold": {
+      "figure": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig3_operating_manifold_oldstyle_clpd_v1",
+      "exports": [
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig3_operating_manifold_oldstyle_clpd_v1.svg",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig3_operating_manifold_oldstyle_clpd_v1.pdf",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig3_operating_manifold_oldstyle_clpd_v1.png",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig3_operating_manifold_oldstyle_clpd_v1.tiff"
+      ],
+      "source_data": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\source_data\\fig3_oldstyle_clpd_operating_source_v1.csv"
+    },
+    "fig4_clpd_displacement": {
+      "figure": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig4_clpd_displacement_oldstyle_v1",
+      "exports": [
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig4_clpd_displacement_oldstyle_v1.svg",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig4_clpd_displacement_oldstyle_v1.pdf",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig4_clpd_displacement_oldstyle_v1.png",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig4_clpd_displacement_oldstyle_v1.tiff"
+      ],
+      "source_data": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\source_data\\fig4_oldstyle_clpd_displacement_source_v1.csv"
+    },
+    "fig5_phase_portrait": {
+      "figure": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig5_phase_portrait_oldstyle_clpd_v1",
+      "exports": [
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig5_phase_portrait_oldstyle_clpd_v1.svg",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig5_phase_portrait_oldstyle_clpd_v1.pdf",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig5_phase_portrait_oldstyle_clpd_v1.png",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig5_phase_portrait_oldstyle_clpd_v1.tiff"
+      ],
+      "source_data": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\source_data\\fig5_oldstyle_clpd_phase_source_v1.csv"
+    },
+    "fig6_role_action_risk": {
+      "figure": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig6_role_action_risk_oldstyle_clpd_v1",
+      "exports": [
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig6_role_action_risk_oldstyle_clpd_v1.svg",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig6_role_action_risk_oldstyle_clpd_v1.pdf",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig6_role_action_risk_oldstyle_clpd_v1.png",
+        "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\fig6_role_action_risk_oldstyle_clpd_v1.tiff"
+      ],
+      "source_data": "work\\commitment_trace_llm\\commitment_trace_llm_clpd_locked_v2\\figure_package_infocom_v1_oldstyle_clpd\\source_data\\fig6_oldstyle_clpd_role_action_source_v1.csv"
+    }
+  },
+  "style_contract": {
+    "base": "v12 product-IEEE grammar",
+    "primary_change": "make CLPD the teal proposed method while preserving old visual structure"
+  }
+}

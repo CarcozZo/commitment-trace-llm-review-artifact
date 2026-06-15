@@ -1,34 +1,37 @@
 {
-  "artifact_version": "anonymous_review_v2_progress_guard",
-  "verdict": "PARETO_REPLAY_CCPB_CANDIDATE",
-  "run_name": "commitment_trace_llm_pareto_v3_progress_guard",
+  "artifact_version": "anonymous_review_v3_clpd",
+  "verdict": "CLPD_LOCKED_TRACE_REPLAY",
   "budget_per_policy": 24,
-  "policy_config_count": 192,
-  "policy_event_rows": 442368,
-  "aggregated_rows": 2496,
-  "validation_config_rows": 192,
-  "validation_pareto_rows": 144,
-  "selected_config_count": 28,
-  "test_metric_rows": 196,
-  "dominance_rows": 672,
-  "core_dominance_count": 1,
-  "practical_non_dominated_regimes": [
-    "feasible",
-    "high_fanout_feasible",
-    "network_delay_high",
-    "verifier_scarce"
+  "baseline_policy_event_rows": 442368,
+  "clpd_policy_event_rows": 55296,
+  "clpd_config_count": 24,
+  "clpd_aggregated_rows": 312,
+  "clpd_validation_rows": 24,
+  "clpd_validation_pareto_rows": 17,
+  "clpd_selected_configs": [
+    "clpd_cfg005",
+    "clpd_cfg018",
+    "clpd_cfg016",
+    "clpd_cfg003",
+    "clpd_cfg013"
   ],
-  "practical_non_dominated_regime_count": 4,
-  "selected_ccpb_configs": [
-    "progress_guarded_cpb_cfg004",
-    "progress_guarded_cpb_cfg005",
-    "progress_guarded_cpb_cfg011",
-    "progress_guarded_cpb_cfg023"
-  ],
-  "release_boundary": "The anonymous review artifact releases locked replay records plus validation, summary, and anonymity-check scripts. Source-trace generation and full Pareto replay drivers are not included in the double-blind package.",
-  "validator_sha256": "7d4853c42a9927a8ab8145df394af8c0386bd2b2924b4de37ec98f441a0ec604",
+  "clpd_anchor_config_id": "clpd_cfg016",
+  "clpd_test_rows": 35,
+  "clpd_anchor_metrics": {
+    "fce_per_msg": 0.33024546062801935,
+    "progress_per_msg": 0.23174174528985508,
+    "mean_debt": 17.388952045714284,
+    "withheld_ratio": 0.059782608695652176,
+    "progress_ratio_vs_selected_pg_cpb": 1.0401090903329282,
+    "fce_ratio_vs_selected_pg_cpb": 0.8449916426891635,
+    "debt_ratio_vs_selected_pg_cpb": 0.8223372806097303,
+    "withheld_delta_vs_selected_pg_cpb": -0.2122584541062802,
+    "replace_pg_gate": 1
+  },
   "released_commands": [
     "python scripts/validate_commitmenttrace.py --root .",
+    "python scripts/audit_commitmenttrace_dataset.py --root .",
+    "python scripts/audit_network_service_replay.py --root .",
     "python scripts/summarize_locked_results.py --root .",
     "python scripts/check_anonymity.py --root ."
   ],
@@ -44,13 +47,7 @@
       "policy_replay_event": 442368
     },
     "parse_success_rate": 1.0,
-    "action_roles_nonzero_false_transition": [
-      "executor",
-      "network_controller",
-      "planner"
-    ],
-    "max_false_transition_rate": 0.9305555555555556,
-    "errors": [],
-    "warnings": []
+    "hidden_feature_forbidden_rows": 0,
+    "hidden_flag_errors": 0
   }
 }

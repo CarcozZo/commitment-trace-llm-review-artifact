@@ -18,7 +18,7 @@ This artifact is organized to let reviewers audit three claims from the paper:
    hidden fields only after admission decisions have been made.
 3. **Figure and metric regeneration.** The released scripts validate the schema,
    check hidden-field exclusion, audit network-service replay, and summarize the
-   locked test results used by the manuscript.
+   CLPD locked replay and baseline tradeoffs used by the manuscript.
 
 The artifact is intended for double-blind peer review.  It avoids author names,
 institution names, grant identifiers, local absolute paths, and non-anonymous
@@ -70,6 +70,19 @@ data/
   audit_report.md
 
 results/
+  clpd_comparison_summary.csv
+  clpd_anchor_gate_summary.csv
+  clpd_test_metrics.csv
+  clpd_validation_config_metrics.csv
+  clpd_selected_configs.csv
+  clpd_pareto_points.csv
+  clpd_aggregated_metrics.csv
+  clpd_policy_configs.csv
+  fig3_oldstyle_clpd_operating_source_v1.csv
+  fig4_oldstyle_clpd_displacement_source_v1.csv
+  fig5_oldstyle_clpd_phase_source_v1.csv
+  fig6_oldstyle_clpd_role_action_source_v1.csv
+  figure_package_v1_oldstyle_clpd_qa.json
   selected_configs.csv
   validation_config_metrics.csv
   pareto_points.csv
@@ -120,6 +133,7 @@ docs/
   BASELINE_FAIRNESS_AUDIT.md
   EXAMPLES.md
   TRACE_TO_METRICS.md
+  CLPD_LOCKED_REPLAY.md
   ROBUSTNESS_AUDIT.md
   VERIFIER_DELAY_BUDGET_AUDIT.md
   PROGRESS_GUARD_AUDIT.md
@@ -155,7 +169,7 @@ The quickstart covers the main review checks:
 | Schema and row counts | `validate_commitmenttrace.py` | record counts, splits, parse success, hidden-field flags |
 | Dataset traceability | `audit_commitmenttrace_dataset.py` | four-role coverage, transition labels, online feature exclusion |
 | Network-service replay | `audit_network_service_replay.py` | packet/verifier/feedback/service variables join every replay event |
-| Locked result summary | `summarize_locked_results.py` | validation-selected operating points and baseline tradeoffs |
+| Locked result summary | `summarize_locked_results.py` | validation-selected CLPD operating point and baseline tradeoffs |
 | Anonymous release check | `check_anonymity.py` | absence of known author, institution, path, and credential patterns |
 
 Expected validation summary:
@@ -190,6 +204,13 @@ policy_replay_events: 442368
 network_states: 2208
 network_state_join_rate: 1.0000
 hidden_field_exclusion_rate: 1.0000
+```
+
+Expected CLPD locked replay summary includes:
+
+```text
+CLPD anchor clpd_cfg016: FCE/msg 0.330; progress/msg 0.232; debt 17.4; withheld 6.0%
+CLPD vs selected PG-C-CPB: progress ratio 1.040; FCE ratio 0.845; debt ratio 0.822; withheld delta -21.2 pp
 ```
 
 ## Main Review Boundary

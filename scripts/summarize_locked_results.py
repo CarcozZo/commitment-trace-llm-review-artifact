@@ -77,6 +77,28 @@ def main() -> int:
     dominated = sum(int(float(row.get("baseline_core_dominates_ccpb", "0"))) for row in dominance_rows)
     print()
     print(f"Core dominance checks: {dominated}/{total} baseline rows dominate selected PG-C-CPB rows")
+
+    clpd_anchor = results_dir / "clpd_anchor_gate_summary.csv"
+    if clpd_anchor.exists():
+        rows = read_csv(clpd_anchor)
+        anchor = next((row for row in rows if row.get("policy_config_id") == "clpd_cfg016"), None)
+        if anchor:
+            print()
+            print("CLPD locked replay anchor")
+            print(
+                "clpd_cfg016: "
+                f"FCE/msg {f(anchor, 'fce_per_msg'):.3f}; "
+                f"Prog/msg {f(anchor, 'progress_per_msg'):.3f}; "
+                f"Debt {f(anchor, 'mean_debt'):.1f}; "
+                f"Withheld {100.0 * f(anchor, 'withheld_ratio'):.1f}%"
+            )
+            print(
+                "vs selected PG-C-CPB: "
+                f"progress ratio {f(anchor, 'progress_vs_pg'):.3f}; "
+                f"FCE ratio {f(anchor, 'fce_vs_pg'):.3f}; "
+                f"debt ratio {f(anchor, 'debt_vs_pg'):.3f}; "
+                f"withheld delta {100.0 * f(anchor, 'withheld_delta_vs_pg'):.1f} pp"
+            )
     return 0
 
 
