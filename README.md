@@ -4,6 +4,22 @@ This repository contains an anonymized review artifact for CommitmentTrace-LLM,
 a controlled trace-replay benchmark for commitment-aware communication in
 role-reactive LLM-agent services.
 
+## Reviewer Quick Map
+
+This artifact is organized to let reviewers audit three claims from the paper:
+
+1. **Dataset and service boundary.** The released records connect wireless/edge
+   claims, frozen role-conditioned LLM-agent responses, receiver commitment
+   labels, delayed verifier outcomes, network states, and policy replay events.
+   The key control object is the receiver action state authorized by message
+   delivery, not only whether a packet is delivered.
+2. **Same-information baseline comparison.** All compared policies are replayed
+   on the same locked events, selected on validation only, and evaluated on
+   hidden fields only after admission decisions have been made.
+3. **Figure and metric regeneration.** The released scripts validate the schema,
+   check hidden-field exclusion, audit network-service replay, and summarize the
+   locked test results used by the manuscript.
+
 The artifact is intended for double-blind peer review.  It avoids author names,
 institution names, grant identifiers, local absolute paths, and non-anonymous
 repository identifiers.  If the paper is accepted, the anonymous placeholders
@@ -31,10 +47,11 @@ The released scale is:
 | Network-state rows | 2,208 |
 | Policy replay events | 442,368 |
 
-The dataset is not a live deployment trace.  It is a controlled trace-replay
-benchmark: frozen role responses are replayed across network regimes to test
-commitment-aware admission, delayed-feedback control, and same-information
-baseline gates.
+The benchmark is designed for controlled mechanism evidence. Frozen role
+responses are replayed across feasible, high-fanout, high-delay, and
+verifier-scarce regimes while preserving the same semantic content. This makes
+it possible to isolate whether an admission controller changes the receiver
+state authorized by delivery under the same online observation set.
 
 ## Directory Layout
 
@@ -131,6 +148,16 @@ python scripts/check_anonymity.py --root .
 See `docs/REPRODUCIBILITY.md` for the full artifact audit sequence, including
 baseline-fairness checks and release-manifest refresh.
 
+The quickstart covers the main review checks:
+
+| Check | Script | What it verifies |
+|---|---|---|
+| Schema and row counts | `validate_commitmenttrace.py` | record counts, splits, parse success, hidden-field flags |
+| Dataset traceability | `audit_commitmenttrace_dataset.py` | four-role coverage, transition labels, online feature exclusion |
+| Network-service replay | `audit_network_service_replay.py` | packet/verifier/feedback/service variables join every replay event |
+| Locked result summary | `summarize_locked_results.py` | validation-selected operating points and baseline tradeoffs |
+| Anonymous release check | `check_anonymity.py` | absence of known author, institution, path, and credential patterns |
+
 Expected validation summary:
 
 ```text
@@ -168,14 +195,23 @@ hidden_field_exclusion_rate: 1.0000
 ## Main Review Boundary
 
 The artifact supports claims about validation-locked trace replay under the
-recorded scale and splits.  It should not be interpreted as evidence from a
-production LLM-agent deployment or as a large-scale real-world corpus.
+recorded scale and splits. It is intended to test mechanism-level questions:
+whether actionability labels, delayed verifier feedback, and queue prices change
+the commitments that communication is allowed to induce.
 
 The key experimental boundary is same-information online replay: policy
 decisions may use online features, queue states, delayed feedback that has
 already become observable, and configured actionability labels.  They may not
 use latent truth, future verifier outcomes, future downstream actions, or
 hindsight false commitment exposure at admission time.
+
+Baseline fairness is documented in `docs/BASELINE_FAIRNESS_AUDIT.md`. In brief,
+each policy receives the same frozen trace events, the same observable online
+features available to its interface, the same validation-only selection rule,
+and the same locked test replay. Strong baselines are treated as meaningful
+operating points rather than strawmen; several reduce exposure or debt by
+withholding more service, while CLPD targets a progress-preserving low-exposure
+frontier by controlling the receiver-state authorization label.
 
 ## Citation Placeholder
 

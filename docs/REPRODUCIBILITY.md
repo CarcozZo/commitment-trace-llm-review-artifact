@@ -2,6 +2,24 @@
 
 This guide records the command chain for checking the released CommitmentTrace-LLM artifact and reproducing the numerical summaries used by the manuscript. Run commands from the artifact root unless a command explicitly points to the repository-level scripts directory.
 
+## Reviewer Checklist
+
+The recommended review sequence is:
+
+1. run the five artifact-root commands in the quickstart;
+2. inspect `docs/DATASET_CARD.md` for the template, split, and online-observation
+   boundary;
+3. inspect `docs/BASELINE_FAIRNESS_AUDIT.md` for validation-only selection and
+   same-information replay;
+4. inspect `docs/NETWORK_SERVICE_REPLAY_AUDIT.md` for packet capacity, verifier
+   capacity, feedback delay, resource utilization, verifier queue, and
+   commitment-debt coverage;
+5. inspect the released `results/round7_*` CSV files for the source data used
+   by the manuscript figures.
+
+All checks are deterministic on the released files. The scripts do not call an
+LLM API and do not require GPU execution.
+
 ## 1. Validate Dataset Structure
 
 ```powershell

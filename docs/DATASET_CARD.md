@@ -16,6 +16,21 @@ especially intended for studying when message delivery authorizes receiver-side
 commitments such as planning, action preparation, resource reservation,
 verification enqueueing, propagation, or execution.
 
+## Review-Relevant Design Points
+
+The dataset is built to support three mechanism checks:
+
+- **same semantic content, different network pressure:** the same frozen role
+  responses are replayed under feasible, high-fanout, high-delay, and
+  verifier-scarce regimes;
+- **same online observation, hidden evaluation labels:** policy events expose
+  only online features, current queues, admissible labels, and feedback that has
+  already arrived; hidden truth and realized FCE are evaluation-only fields;
+- **receiver-state authorization rather than send/drop only:** each event
+  records admissible actionability labels and the receiver state induced by the
+  selected label, allowing policies to differ in the commitment they authorize
+  even when semantic content is unchanged.
+
 ## Non-Goals
 
 This dataset is not:
@@ -57,6 +72,13 @@ This repeated-regime design intentionally keeps semantic content fixed while
 changing network pressure and verifier scarcity.  It enables controlled
 same-information comparison, but it is not a substitute for live deployment
 evidence.
+
+The six templates are chosen to cover networked LLM-agent services where
+communication has immediate service consequences: mobility planning, edge
+capacity reservation, satellite/LEO contact preparation, vehicular handoff,
+distributed model-cache updates, and verifier-service scheduling. In all cases,
+the benchmark records both the message-level evidence and the receiver-side
+commitment that delivery is allowed to trigger.
 
 ## Construction Pipeline
 

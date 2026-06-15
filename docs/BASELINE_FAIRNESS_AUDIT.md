@@ -2,6 +2,30 @@
 
 This audit describes the locked same-information replay used for the paper comparison. It records the comparison boundary, validation budget, online observation set, action set, and locked test tradeoff for each policy.
 
+## Audit Contract
+
+The comparison is a validation-locked replay audit rather than an adaptive
+post-hoc sweep. Each policy is evaluated under the following contract:
+
+- the same frozen claim, role-response, transition-label, verifier-outcome, and
+  network-state records are used for every policy;
+- hyperparameters are selected only on validation splits and then frozen before
+  ID-test, OOD-template, and OOD-network replay;
+- admission decisions can read online features, current queues, admissible
+  action labels, and delayed feedback that has already become observable;
+- admission decisions cannot read latent truth, future verifier outcomes,
+  future downstream actions, realized FCE, or hindsight rollback cost;
+- packet, verifier, actionability, and replay-budget accounting are computed
+  from the same event table for all policies;
+- summary metrics are computed after replay from the same hidden evaluation
+  fields.
+
+This contract makes the baselines comparable even when their action spaces are
+different. A send/defer policy is not forced to use verify-first labels, and a
+commitment controller is not allowed to use hidden labels that simpler policies
+do not see. The fairness requirement is same online information at each policy
+interface, not identical internal scoring rules.
+
 ## Verdict
 
 - Same frozen trace records: yes.
@@ -29,3 +53,25 @@ This audit describes the locked same-information replay used for the paper compa
 The strongest baselines are meaningful operating points. Pressure backpressure lowers debt by deferring more events, and static CPB can lower realized FCE with a higher rejection ratio. PG-C-CPB is therefore evaluated as a receiver-state authorization controller that trades progress, false-commitment exposure, verifier load, and commitment debt under the same online observation boundary.
 
 The main difference between Pressure BP and PG-C-CPB is the control surface: Pressure BP reacts to debt/FCE pressure with actionable-or-defer decisions, while PG-C-CPB can authorize informational-only, verify-first, defer, reject, or actionable receiver states and updates its estimates only after delayed feedback becomes observable.
+
+## What Makes CLPD a Separate Algorithmic Interface
+
+CLPD is not scored as an offline reranking of baseline outputs. It receives the
+same candidate event stream but solves a different online admission interface:
+for each message-receiver pair, it first evaluates feasible labels on the
+authorization lattice and then selects the minimum sufficient label under
+progress, commitment-debt, verifier-backlog, and exposure prices. This separates
+three decisions that are collapsed in common baselines:
+
+- packet admission: whether any delivery occurs in the current slot;
+- receiver authorization: whether delivery may authorize information,
+  verify-first handling, action preparation, propagation, or execution;
+- delayed service update: how verifier and downstream feedback update queues
+  after the original admission decision.
+
+The audit therefore reports both conventional policy tradeoffs and whether a
+policy can move along the receiver-state authorization boundary. The paper's
+main comparison uses the validation-selected progress-guarded C-CPB row because
+it is the strongest non-CLPD operating point that exposes the same five-label
+actionability interface while lacking CLPD's lattice minimum-sufficiency rule
+and primal-dual price coupling.
