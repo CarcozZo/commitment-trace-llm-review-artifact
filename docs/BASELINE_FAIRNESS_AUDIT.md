@@ -13,18 +13,18 @@ post-hoc sweep. Each policy is evaluated under the following contract:
   ID-test, OOD-template, and OOD-network replay;
 - admission decisions can read online features, current queues, admissible
   action labels, and delayed feedback that has already become observable;
-- admission decisions cannot read latent truth, future verifier outcomes,
-  future downstream actions, realized FCE, or hindsight rollback cost;
+- online admission features exclude latent truth, future verifier outcomes,
+  future downstream actions, realized FCE, and hindsight rollback cost;
 - packet, verifier, actionability, and replay-budget accounting are computed
   from the same event table for all policies;
 - summary metrics are computed after replay from the same hidden evaluation
   fields.
 
 This contract makes the baselines comparable even when their action spaces are
-different. A send/defer policy is not forced to use verify-first labels, and a
-commitment controller is not allowed to use hidden labels that simpler policies
-do not see. The fairness requirement is same online information at each policy
-interface, not identical internal scoring rules.
+different. Each policy uses its admissible interface, and all policies share the
+same hidden-field exclusion rule. The fairness requirement is matched online
+information at each policy interface, with policy-specific scoring rules left
+intact.
 
 ## Verdict
 
@@ -56,8 +56,8 @@ The main difference between Pressure BP and PG-C-CPB is the control surface: Pre
 
 ## What Makes CLPD a Separate Algorithmic Interface
 
-CLPD is not scored as an offline reranking of baseline outputs. It receives the
-same candidate event stream but solves a different online admission interface:
+CLPD receives the same candidate event stream and solves a different online
+admission interface:
 for each message-receiver pair, it first evaluates feasible labels on the
 authorization lattice and then selects the minimum sufficient label under
 progress, commitment-debt, verifier-backlog, and exposure prices. This separates

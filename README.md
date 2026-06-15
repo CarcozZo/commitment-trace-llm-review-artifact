@@ -200,9 +200,9 @@ whether actionability labels, delayed verifier feedback, and queue prices change
 the commitments that communication is allowed to induce.
 
 The key experimental boundary is same-information online replay: policy
-decisions may use online features, queue states, delayed feedback that has
-already become observable, and configured actionability labels.  They may not
-use latent truth, future verifier outcomes, future downstream actions, or
+decisions use online features, queue states, delayed feedback that has already
+become observable, and configured actionability labels. The online feature set
+excludes latent truth, future verifier outcomes, future downstream actions, and
 hindsight false commitment exposure at admission time.
 
 Baseline fairness is documented in `docs/BASELINE_FAIRNESS_AUDIT.md`. In brief,

@@ -17,8 +17,8 @@ The recommended review sequence is:
 5. inspect the released `results/round7_*` CSV files for the source data used
    by the manuscript figures.
 
-All checks are deterministic on the released files. The scripts do not call an
-LLM API and do not require GPU execution.
+All checks are deterministic on the released files and run as CPU-only artifact
+audits with no LLM API calls.
 
 ## 1. Validate Dataset Structure
 
@@ -182,7 +182,7 @@ Generated outputs:
 - `results/round4_verifier_delay_budget_audit.csv`
 
 The audit groups locked test events by observable feedback delay and verifier
-capacity. It is a direct RQ3 support check and does not retune policy
+capacity. It is a direct RQ3 support check using the locked policy
 configurations.
 
 ## 11. Recompute Release Manifest
@@ -197,4 +197,7 @@ If that helper is unavailable, recompute SHA256 values for all files except `doc
 
 ## Interpretation Boundary
 
-The released artifact supports same-information, validation-locked trace replay. Metrics are computed after replay from frozen transition labels and hidden evaluation labels. Policies cannot observe latent truth, future verifier outcomes, future downstream actions, or realized FCE at decision time.
+The released artifact supports same-information, validation-locked trace replay.
+Metrics are computed after replay from frozen transition labels and hidden
+evaluation labels. Policy inputs exclude latent truth, future verifier outcomes,
+future downstream actions, and realized FCE at decision time.
