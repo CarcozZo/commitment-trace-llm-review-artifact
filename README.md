@@ -36,6 +36,15 @@ CommitmentTrace-LLM links six types of records:
 - network-state traces;
 - online policy replay events.
 
+The trace construction is explicit. Balanced source claims are instantiated into
+six wireless/edge service templates, queried once against four role prompts
+(planner, executor, verifier, and network controller), parsed into receiver
+action-state labels, joined with delayed verifier outcomes and network-state
+tuples, and then expanded into locked policy replay events. Thus every figure
+point can be traced from a source claim to a scenario tuple, a role response, an
+authorized receiver state, and a policy decision under the recorded online
+state.
+
 The released scale is:
 
 | Record type | Count |

@@ -81,16 +81,21 @@ commitment that delivery is allowed to trigger.
 
 The released records follow a fixed construction pipeline:
 
-1. Generate controlled wireless/edge claims with hidden ground-truth labels.
-2. Query role-conditioned LLM-agent prompts for planner, executor, verifier,
+1. Generate controlled wireless/edge source claims with hidden ground-truth
+   labels.
+2. Instantiate each source claim into one of the six service templates, which
+   defines the communication context, receiver role set, verifier-delay handle,
+   and network-service variables used during replay.
+3. Query role-conditioned LLM-agent prompts for planner, executor, verifier,
    and network-controller responses.
-3. Parse each response into a structured role-response record.
-4. Convert role responses into receiver action-state and commitment labels with
+4. Parse each response into a structured role-response record.
+5. Convert role responses into receiver action-state and commitment labels with
    a deterministic parser.
-5. Generate delayed verifier outcomes and network-state traces.
-6. Replay online policies using only observable features and delayed feedback
+6. Join each claim--role transition with delayed verifier outcomes and
+   per-slot network-state traces.
+7. Replay online policies using only observable features and delayed feedback
    that has already become available.
-7. Accumulate offline realized FCE, true progress, resource waste, and terminal
+8. Accumulate offline realized FCE, true progress, resource waste, and terminal
    debt after replay.
 
 ## Record Types
