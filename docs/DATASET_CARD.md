@@ -34,7 +34,7 @@ The dataset is built to support three mechanism checks:
 ## Scope
 
 CommitmentTrace-LLM targets mechanism-level evaluation for receiver-state
-authorization in networked LLM-agent services. The released records support
+authorization in distributed LLM-agent services. The released records support
 audits of admission control, actionability labels, delayed verifier feedback,
 commitment debt, and same-information baseline replay under controlled
 wireless/edge service regimes.
@@ -70,7 +70,7 @@ changing network pressure and verifier scarcity, enabling controlled
 same-information comparison of how policies authorize receiver-side
 commitments.
 
-The six templates are chosen to cover networked LLM-agent services where
+The six templates are chosen to cover distributed LLM-agent services where
 communication has immediate service consequences: mobility planning, edge
 capacity reservation, satellite/LEO contact preparation, vehicular handoff,
 distributed model-cache updates, and verifier-service scheduling. In all cases,
