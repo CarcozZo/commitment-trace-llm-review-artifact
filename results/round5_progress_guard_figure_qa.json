@@ -37,7 +37,7 @@
     },
     {
       "policy_name": "progress_guarded_cpb",
-      "policy_label": "PG-C-CPB",
+      "policy_label": "C-CPB+Prog.",
       "configs": 4,
       "fce_per_msg": 0.39082689572765705,
       "progress_per_msg": 0.22280523018568846,

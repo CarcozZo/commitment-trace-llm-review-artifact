@@ -10,7 +10,7 @@ control slots rather than offline answer-quality scoring rows.
 - network-state rows: 2208
 - network-state join rate: 1.0000
 - hidden-field exclusion rate: 1.0000
-- selected PG-C-CPB locked-test events: 6624
+- selected C-CPB+Prog. locked-test events: 6624
 
 ## Service-Control Variables
 
@@ -33,9 +33,9 @@ irreversibility, false-risk estimate, and utility-if-true estimate.
 | `estimated_false_risk` | 1.0000 | 143 |
 | `estimated_utility_if_true` | 1.0000 | 576 |
 
-## Selected PG-C-CPB Stress Response
+## Selected C-CPB+Prog. Stress Response
 
-The rows below summarize selected PG-C-CPB locked-test action mixes under
+The rows below summarize selected C-CPB+Prog. locked-test action mixes under
 observable service stress. `protective_ratio` is the fraction of verify-first,
 defer, and reject decisions.
 

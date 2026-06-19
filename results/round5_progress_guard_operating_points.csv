@@ -76,34 +76,34 @@ pressure_backpressure,Pressure BP,pressure_backpressure_cfg016,high_fanout_feasi
 pressure_backpressure,Pressure BP,pressure_backpressure_cfg016,network_delay_high,test_id,13.88888888888889,0.39819554124999995,0.21162517541666667,27.69362422,0.044168437500000005
 pressure_backpressure,Pressure BP,pressure_backpressure_cfg016,network_delay_high,test_ood_template,15.972222222222221,0.4155034648958334,0.18104917986111116,27.39069367,0.0189880625
 pressure_backpressure,Pressure BP,pressure_backpressure_cfg016,verifier_scarce,test_ood_network,32.63888888888889,0.1696990624999999,0.1288573860590278,32.68088239,0.01125679296875
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,feasible,test_id,16.666666666666664,0.4905158333333335,0.3140574305555556,9.27505,0.012149305555555557
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,feasible,test_ood_template,19.444444444444446,0.5865141666666668,0.24451451388888884,12.0715,0.018984722222222222
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,high_fanout_feasible,test_id,22.22222222222222,0.4800783187499999,0.3213021,16.87211564,0.015186631944444445
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,high_fanout_feasible,test_ood_template,22.22222222222222,0.4404228230902775,0.24891795,15.05806034,0.004794965277777777
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,network_delay_high,test_id,25.0,0.4572396215277777,0.2632473305555556,17.26306723,0.007954375
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,network_delay_high,test_ood_template,28.125,0.3813192151041666,0.20163403611111108,16.81667936,0.017445694444444444
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg004,verifier_scarce,test_ood_network,43.22916666666667,0.23345666666666678,0.15490925130208333,36.45962828,0.009186802951388889
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,feasible,test_id,19.444444444444446,0.4220630555555556,0.3288140972222223,9.27505,0.012149305555555557
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,feasible,test_ood_template,20.833333333333336,0.4574936805555555,0.24991119791666666,12.0715,0.020095833333333334
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,high_fanout_feasible,test_id,19.444444444444446,0.4127533534722222,0.3259611,12.93096867,0.015186631944444445
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,high_fanout_feasible,test_ood_template,21.52777777777778,0.3828188053819444,0.2519037187500001,14.96639659,0.0061838541666666665
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,network_delay_high,test_id,26.38888888888889,0.3456927479166667,0.2680635944444444,9.04270059,0.013364236111111111
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,network_delay_high,test_ood_template,28.47222222222222,0.3328325866319444,0.2055624680555555,12.80393826,0.0076570694444444455
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg005,verifier_scarce,test_ood_network,31.59722222222222,0.23467982638888898,0.18239346050347216,50.82082482,0.009633206597222223
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,feasible,test_id,12.5,0.4920455555555557,0.3415453472222223,11.7985,0.012149305555555557
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,feasible,test_ood_template,13.88888888888889,0.5820080555555557,0.25358060763888884,12.0715,0.020095833333333334
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,high_fanout_feasible,test_id,16.666666666666664,0.5916035131944444,0.31397024999999995,19.34126423,0.015186631944444445
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,high_fanout_feasible,test_ood_template,17.708333333333336,0.4802256187499998,0.2553882000000001,15.11010391,0.010090104166666666
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,network_delay_high,test_id,22.22222222222222,0.5029786402777778,0.2650970416666667,16.8736896,0.013364236111111111
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,network_delay_high,test_ood_template,23.26388888888889,0.43906499305555546,0.2075463458333333,13.22486964,0.020883194444444444
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg011,verifier_scarce,test_ood_network,31.770833333333332,0.25975513888888896,0.17943153038194448,69.82097606,0.009633206597222223
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,feasible,test_id,16.666666666666664,0.5255952777777779,0.33904381944444456,11.7985,0.012149305555555557
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,feasible,test_ood_template,22.916666666666664,0.5800803472222221,0.24505798611111113,13.568675,0.018984722222222222
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,high_fanout_feasible,test_id,22.22222222222222,0.547820975,0.316707525,21.02553972,0.015186631944444445
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,high_fanout_feasible,test_ood_template,26.041666666666668,0.5064341928819444,0.24588110625000004,15.05806034,0.008701215277777778
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,network_delay_high,test_id,27.77777777777778,0.508081511111111,0.25686828055555566,20.139614,0.007954375
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,network_delay_high,test_ood_template,32.98611111111111,0.4180889604166666,0.20002355694444446,12.80393826,0.020883194444444444
-progress_guarded_cpb,PG-C-CPB,progress_guarded_cpb_cfg023,verifier_scarce,test_ood_network,36.63194444444444,0.2509073958333334,0.18373032161458333,93.71874893,0.00856795920138889
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,feasible,test_id,16.666666666666664,0.4905158333333335,0.3140574305555556,9.27505,0.012149305555555557
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,feasible,test_ood_template,19.444444444444446,0.5865141666666668,0.24451451388888884,12.0715,0.018984722222222222
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,high_fanout_feasible,test_id,22.22222222222222,0.4800783187499999,0.3213021,16.87211564,0.015186631944444445
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,high_fanout_feasible,test_ood_template,22.22222222222222,0.4404228230902775,0.24891795,15.05806034,0.004794965277777777
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,network_delay_high,test_id,25.0,0.4572396215277777,0.2632473305555556,17.26306723,0.007954375
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,network_delay_high,test_ood_template,28.125,0.3813192151041666,0.20163403611111108,16.81667936,0.017445694444444444
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg004,verifier_scarce,test_ood_network,43.22916666666667,0.23345666666666678,0.15490925130208333,36.45962828,0.009186802951388889
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,feasible,test_id,19.444444444444446,0.4220630555555556,0.3288140972222223,9.27505,0.012149305555555557
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,feasible,test_ood_template,20.833333333333336,0.4574936805555555,0.24991119791666666,12.0715,0.020095833333333334
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,high_fanout_feasible,test_id,19.444444444444446,0.4127533534722222,0.3259611,12.93096867,0.015186631944444445
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,high_fanout_feasible,test_ood_template,21.52777777777778,0.3828188053819444,0.2519037187500001,14.96639659,0.0061838541666666665
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,network_delay_high,test_id,26.38888888888889,0.3456927479166667,0.2680635944444444,9.04270059,0.013364236111111111
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,network_delay_high,test_ood_template,28.47222222222222,0.3328325866319444,0.2055624680555555,12.80393826,0.0076570694444444455
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg005,verifier_scarce,test_ood_network,31.59722222222222,0.23467982638888898,0.18239346050347216,50.82082482,0.009633206597222223
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,feasible,test_id,12.5,0.4920455555555557,0.3415453472222223,11.7985,0.012149305555555557
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,feasible,test_ood_template,13.88888888888889,0.5820080555555557,0.25358060763888884,12.0715,0.020095833333333334
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,high_fanout_feasible,test_id,16.666666666666664,0.5916035131944444,0.31397024999999995,19.34126423,0.015186631944444445
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,high_fanout_feasible,test_ood_template,17.708333333333336,0.4802256187499998,0.2553882000000001,15.11010391,0.010090104166666666
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,network_delay_high,test_id,22.22222222222222,0.5029786402777778,0.2650970416666667,16.8736896,0.013364236111111111
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,network_delay_high,test_ood_template,23.26388888888889,0.43906499305555546,0.2075463458333333,13.22486964,0.020883194444444444
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg011,verifier_scarce,test_ood_network,31.770833333333332,0.25975513888888896,0.17943153038194448,69.82097606,0.009633206597222223
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,feasible,test_id,16.666666666666664,0.5255952777777779,0.33904381944444456,11.7985,0.012149305555555557
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,feasible,test_ood_template,22.916666666666664,0.5800803472222221,0.24505798611111113,13.568675,0.018984722222222222
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,high_fanout_feasible,test_id,22.22222222222222,0.547820975,0.316707525,21.02553972,0.015186631944444445
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,high_fanout_feasible,test_ood_template,26.041666666666668,0.5064341928819444,0.24588110625000004,15.05806034,0.008701215277777778
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,network_delay_high,test_id,27.77777777777778,0.508081511111111,0.25686828055555566,20.139614,0.007954375
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,network_delay_high,test_ood_template,32.98611111111111,0.4180889604166666,0.20002355694444446,12.80393826,0.020883194444444444
+progress_guarded_cpb,C-CPB+Prog.,progress_guarded_cpb_cfg023,verifier_scarce,test_ood_network,36.63194444444444,0.2509073958333334,0.18373032161458333,93.71874893,0.00856795920138889
 static_cpb,Static CPB,static_cpb_cfg000,feasible,test_id,29.166666666666668,0.5760361111111112,0.3032222222222223,33.6814,0.049180555555555554
 static_cpb,Static CPB,static_cpb_cfg000,feasible,test_ood_template,34.02777777777778,0.5774055555555555,0.23928125,27.75146,0.03835972222222222
 static_cpb,Static CPB,static_cpb_cfg000,high_fanout_feasible,test_id,43.05555555555556,0.6130510069444445,0.246525,35.78918759,0.06147569444444444

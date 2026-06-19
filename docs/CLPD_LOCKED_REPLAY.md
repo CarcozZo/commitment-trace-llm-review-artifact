@@ -44,10 +44,10 @@ The manuscript uses `clpd_cfg016` as the validation-locked anchor. In
 | Progress/message | `0.231742` |
 | Mean commitment debt | `17.388952` |
 | Withheld ratio | `0.059783` |
-| Progress ratio vs selected PG-C-CPB | `1.040109` |
-| FCE ratio vs selected PG-C-CPB | `0.844992` |
-| Debt ratio vs selected PG-C-CPB | `0.822337` |
-| Withheld-ratio delta vs selected PG-C-CPB | `-0.212258` |
+| Progress ratio vs selected C-CPB+Prog. | `1.040109` |
+| FCE ratio vs selected C-CPB+Prog. | `0.844992` |
+| Debt ratio vs selected C-CPB+Prog. | `0.822337` |
+| Withheld-ratio delta vs selected C-CPB+Prog. | `-0.212258` |
 | Replacement gate | `1` |
 
 These values correspond to the manuscript statement that the locked CLPD anchor
@@ -59,7 +59,7 @@ operating region.
 ## Baseline Boundary
 
 The original baseline result files remain in `results/` because they document
-the same-information replay suite, selected PG-C-CPB operating region, dominance
+the same-information replay suite, selected C-CPB+Prog. operating region, dominance
 checks, verifier-delay audit, and robustness checks. CLPD result files are the
-main files for the manuscript's proposed controller; the progress-guarded files
+main files for the manuscript's proposed controller; the progress-queued files
 support the strong-baseline comparison.

@@ -33,7 +33,7 @@ intact.
 - Hidden fields excluded from online features: yes.
 - Forbidden online feature rows: `0`.
 - Hidden flag errors: `0`.
-- Dominance checks: `1/672` baseline rows core-dominate selected PG-C-CPB rows.
+- Dominance checks: `1/672` baseline rows core-dominate selected C-CPB+Prog. rows.
 
 ## Policy Interfaces
 
@@ -46,13 +46,13 @@ intact.
 | Pressure backpressure | debt/FCE backpressure | debt queue, FCE estimate, utility | A/D | 24 | 4 | FCE/msg 0.311238; prog/msg 0.176739; debt 18.403715; D/R 0.474336/0.0 |
 | Static CPB | fixed commitment-pressure prices | receiver state, fixed prices, false-risk estimate | A/V/R | 24 | 4 | FCE/msg 0.293083; prog/msg 0.163072; debt 34.773152; D/R 0.135115/0.402929 |
 | C-CPB | commitment authorization control | estimator, debt queue, verifier queue, feedback delay, receiver state | A/I/V/D/R | 24 | 4 | FCE/msg 0.43328; prog/msg 0.217093; debt 21.90804; D/R 0.22026/0.086353 |
-| PG-C-CPB | progress-guarded commitment authorization control | estimator, progress-deficit queue, debt queue, verifier queue, feedback delay, receiver state | A/I/V/D/R | 24 | 4 | FCE/msg 0.390827; prog/msg 0.222805; debt 21.145766; D/R 0.181159/0.090882 |
+| C-CPB+Prog. | progress-queued commitment authorization control | estimator, progress-deficit queue, debt queue, verifier queue, feedback delay, receiver state | A/I/V/D/R | 24 | 4 | FCE/msg 0.390827; prog/msg 0.222805; debt 21.145766; D/R 0.181159/0.090882 |
 
 ## Interpretation Boundary
 
-The strongest baselines are meaningful operating points. Pressure backpressure lowers debt by deferring more events, and static CPB can lower realized FCE with a higher rejection ratio. PG-C-CPB is therefore evaluated as a receiver-state authorization controller that trades progress, false-commitment exposure, verifier load, and commitment debt under the same online observation boundary.
+The strongest baselines are meaningful operating points. Pressure backpressure lowers debt by deferring more events, and static CPB can lower realized FCE with a higher rejection ratio. C-CPB+Prog. is therefore evaluated as a receiver-state authorization controller that trades progress, false-commitment exposure, verifier load, and commitment debt under the same online observation boundary.
 
-The main difference between Pressure BP and PG-C-CPB is the control surface: Pressure BP reacts to debt/FCE pressure with actionable-or-defer decisions, while PG-C-CPB can authorize informational-only, verify-first, defer, reject, or actionable receiver states and updates its estimates only after delayed feedback becomes observable.
+The main difference between Pressure BP and C-CPB+Prog. is the control surface: Pressure BP reacts to debt/FCE pressure with actionable-or-defer decisions, while C-CPB+Prog. can authorize informational-only, verify-first, defer, reject, or actionable receiver states and updates its estimates only after delayed feedback becomes observable.
 
 ## What Makes CLPD a Separate Algorithmic Interface
 
@@ -71,7 +71,7 @@ three decisions that are collapsed in common baselines:
 
 The audit therefore reports both conventional policy tradeoffs and whether a
 policy can move along the receiver-state authorization boundary. The paper's
-main comparison uses the validation-selected progress-guarded C-CPB row because
+main comparison uses the validation-selected progress-queued C-CPB row because
 it is the strongest non-CLPD operating point that exposes the same five-label
 actionability interface while lacking CLPD's lattice minimum-sufficiency rule
 and primal-dual price coupling.

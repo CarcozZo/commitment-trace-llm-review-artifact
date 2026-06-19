@@ -59,10 +59,10 @@ python scripts\summarize_locked_results.py --root .
 Expected high-level result:
 
 - seven policies are summarized from validation-selected configurations;
-- the locked dominance audit reports `1/672` baseline rows core-dominate selected PG-C-CPB rows;
+- the locked dominance audit reports `1/672` baseline rows core-dominate selected C-CPB+Prog. rows;
 - the CLPD anchor line reports `clpd_cfg016: FCE/msg 0.330; Prog/msg 0.232; Debt 17.4; Withheld 6.0%`;
 - the CLPD comparison line reports progress/FCE/debt/withheld deltas relative
-  to the selected PG-C-CPB operating region.
+  to the selected C-CPB+Prog. operating region.
 
 ## 4. Audit Network-Service Replay Boundary
 
@@ -76,7 +76,7 @@ Expected checks:
 - every released policy replay event includes observable service-control
   variables such as packet capacity, verifier capacity, feedback delay,
   resource utilization, verifier queue, commitment debt, fanout, and utility;
-- selected PG-C-CPB locked-test action mixes are summarized across feedback
+- selected C-CPB+Prog. locked-test action mixes are summarized across feedback
   delay and verifier-capacity stress bins.
 
 Expected high-level result:
@@ -84,7 +84,7 @@ Expected high-level result:
 - `verdict: PASS`
 - network-state join rate `1.0000`
 - hidden-field exclusion rate `1.0000`
-- 6,624 selected PG-C-CPB locked-test events
+- 6,624 selected C-CPB+Prog. locked-test events
 
 Generated outputs:
 
@@ -151,7 +151,7 @@ Generated outputs:
 
 The audit uses validation-selected configurations and locked test events only.
 It checks split/regime stability, deterministic parser label-confidence
-thresholds, and subset dominance rates against selected PG-C-CPB rows.
+thresholds, and subset dominance rates against selected C-CPB+Prog. rows.
 
 ## 9. Reproduce Examples-to-Metrics Trace
 

@@ -29,15 +29,17 @@ and the code is released under [software licence].
 
 - During review: use an anonymous repository or identity-stripped mirror.
 - After acceptance: deposit a versioned archive with a DOI.
-- Recommended public data licence, pending author confirmation: CC BY 4.0.
-- Recommended code licence, pending author confirmation: MIT or Apache-2.0.
+- Planned public data licence for archival release: CC BY 4.0, subject to
+  upstream compatibility checks.
+- Planned code licence for archival release: MIT or Apache-2.0, subject to
+  upstream compatibility checks.
 - Verify the upstream model and generated-output licence before public release.
 
 ## Missing Information / Risk Flags
 
 - Final DOI is intentionally absent during double-blind review.
 - Final creator list is intentionally absent during double-blind review.
-- Final licence should be confirmed by the authors before public release.
+- Final DOI and licence metadata will be added only after acceptance and public
+  archival release.
 - The paper should state that the dataset is controlled trace-replay evidence,
   not a live deployment trace.
-

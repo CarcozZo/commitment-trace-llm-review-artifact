@@ -19,15 +19,18 @@ The released replay compares eight online policies:
 | Pressure backpressure | Backpressure on estimated FCE and debt. | Debt queue, FCE estimate, utility. | A/D | Debt and exposure prices. |
 | Static CPB | Use fixed commitment-pressure prices without delayed updates. | Receiver state, labels, fixed prices. | A/V/R | Fixed debt/FCE prices, thresholds. |
 | C-CPB | Closed-loop commitment authorization control. | Estimator, commitment debt, verifier queue, delay, receiver state. | A/I/V/D/R | Utility/FCE/debt prices, verifier price, estimator update. |
-| PG-C-CPB | Progress-guarded C-CPB. | Estimator, progress-deficit queue, commitment debt, verifier queue, delay, receiver state. | A/I/V/D/R | Progress service target, debt/FCE prices, verifier price, estimator update. |
+| C-CPB+Prog. | Progress-queued C-CPB. | Estimator, progress-deficit queue, commitment debt, verifier queue, delay, receiver state. | A/I/V/D/R | Progress service target, debt/FCE prices, verifier price, estimator update. |
 
 A, I, V, D, and R denote actionable, informational-only, verify-first, defer,
 and reject.
 
-The ablation replay further evaluates PG-C-CPB variants with the same selected
-configurations while removing the progress guard, delayed feedback, commitment
+The ablation replay further evaluates C-CPB+Prog. variants with the same selected
+configurations while removing the progress queue, delayed feedback, commitment
 debt, actionability downgrade, or verify-first admission.  These ablations isolate mechanism
 contributions under the same trace and online observation boundary.
+
+The internal policy identifier for C-CPB+Prog. is `progress_guarded_cpb` in the
+CSV files to preserve reproducible script compatibility.
 
 ## Fairness Rules
 
@@ -71,7 +74,7 @@ evaluated on locked ID, OOD-template, and OOD-network splits.
 
 ## Core Dominance Check
 
-A selected baseline row core-dominates a selected PG-C-CPB row only if it is:
+A selected baseline row core-dominates a selected C-CPB+Prog. row only if it is:
 
 - no worse in false commitment exposure;
 - no worse in rejection ratio;
@@ -81,7 +84,7 @@ A selected baseline row core-dominates a selected PG-C-CPB row only if it is:
 - no lower in true progress;
 - strictly better in at least one of these dimensions.
 
-The released run contains 672 dominance checks comparing selected PG-C-CPB
+The released run contains 672 dominance checks comparing selected C-CPB+Prog.
 configurations with selected baseline configurations within the same regime and
 split.
 
@@ -89,10 +92,10 @@ split.
 
 The strongest baselines occupy meaningful parts of the tradeoff surface.  Some
 baselines reduce FCE by deferring or rejecting more aggressively, and a
-one pressure-backpressure configuration core-dominates a selected PG-C-CPB point
+one pressure-backpressure configuration core-dominates a selected C-CPB+Prog. point
 in a verifier-stressed locked slice.  The intended claim is therefore not
 unconditional single-metric dominance.  The supported claim is that C-CPB
 exposes a practical low-debt operating region with explicit actionability and
-delayed-feedback controls, and that the progress-guarded version improves
+delayed-feedback controls, and that the progress-queued version improves
 progress preservation without reverting to unbounded receiver-side commitments
 under the locked same-information replay protocol.

@@ -18,7 +18,7 @@ POLICY_LABEL = {
     "pressure_backpressure": "Pressure BP",
     "static_cpb": "Static CPB",
     "closed_loop_cpb": "C-CPB",
-    "progress_guarded_cpb": "PG-C-CPB",
+    "progress_guarded_cpb": "C-CPB+Prog.",
 }
 
 POLICY_ORDER = [
@@ -76,7 +76,7 @@ def main() -> int:
     total = len(dominance_rows)
     dominated = sum(int(float(row.get("baseline_core_dominates_ccpb", "0"))) for row in dominance_rows)
     print()
-    print(f"Core dominance checks: {dominated}/{total} baseline rows dominate selected PG-C-CPB rows")
+    print(f"Core dominance checks: {dominated}/{total} baseline rows dominate selected C-CPB+Prog. rows")
 
     clpd_anchor = results_dir / "clpd_anchor_gate_summary.csv"
     if clpd_anchor.exists():
@@ -93,7 +93,7 @@ def main() -> int:
                 f"Withheld {100.0 * f(anchor, 'withheld_ratio'):.1f}%"
             )
             print(
-                "vs selected PG-C-CPB: "
+                "vs selected C-CPB+Prog.: "
                 f"progress ratio {f(anchor, 'progress_vs_pg'):.3f}; "
                 f"FCE ratio {f(anchor, 'fce_vs_pg'):.3f}; "
                 f"debt ratio {f(anchor, 'debt_vs_pg'):.3f}; "

@@ -219,7 +219,7 @@ Expected CLPD locked replay summary includes:
 
 ```text
 CLPD anchor clpd_cfg016: FCE/msg 0.330; progress/msg 0.232; debt 17.4; withheld 6.0%
-CLPD vs selected PG-C-CPB: progress ratio 1.040; FCE ratio 0.845; debt ratio 0.822; withheld delta -21.2 pp
+CLPD vs selected C-CPB+Prog.: progress ratio 1.040; FCE ratio 0.845; debt ratio 0.822; withheld delta -21.2 pp
 ```
 
 ## Main Review Boundary

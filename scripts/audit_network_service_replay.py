@@ -318,7 +318,7 @@ def main() -> int:
     if nonvarying_network:
         errors.append(f"network-state variables do not vary: {nonvarying_network}")
     if not selected_pg_configs:
-        errors.append("no selected PG-C-CPB configurations found")
+        errors.append("no selected C-CPB+Prog. configurations found")
 
     summary = {
         "audit_name": "round8_network_service_replay_audit",
@@ -380,7 +380,7 @@ control slots rather than offline answer-quality scoring rows.
 - network-state rows: {len(network_states)}
 - network-state join rate: {summary['network_state_join']['join_rate']:.4f}
 - hidden-field exclusion rate: {summary['hidden_fields_excluded']['rate']:.4f}
-- selected PG-C-CPB locked-test events: {len(scoped_rows['selected_pg_cpb_locked_test'])}
+- selected C-CPB+Prog. locked-test events: {len(scoped_rows['selected_pg_cpb_locked_test'])}
 
 ## Service-Control Variables
 
@@ -397,9 +397,9 @@ irreversibility, false-risk estimate, and utility-if-true estimate.
         md += f"| `{key}` | {item['coverage']:.4f} | {item['unique_values']} |\n"
 
     md += """
-## Selected PG-C-CPB Stress Response
+## Selected C-CPB+Prog. Stress Response
 
-The rows below summarize selected PG-C-CPB locked-test action mixes under
+The rows below summarize selected C-CPB+Prog. locked-test action mixes under
 observable service stress. `protective_ratio` is the fraction of verify-first,
 defer, and reject decisions.
 
